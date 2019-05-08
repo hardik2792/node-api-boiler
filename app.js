@@ -1,9 +1,8 @@
-/*
-Server File
-App Name: API Demo
-Purpose: Server Init File
-Created By: Hardik Thakor
-*/
+/************************************
+	Server File
+	App Name: API Demo
+	Purpose: Server Initialization
+*************************************/
 
 // Imports
 const express 	= require('express');
@@ -21,7 +20,10 @@ const app = express();
 app.set('port', process.env.PORT || server.port);
 
 // Middlewares setup
-require('./server/middleware')(app);
+require('./server/connectors/middleware')(app);
+
+// Real-time Communication
+require('./support/socket/communicate')(app);
 
 //For Listing All the Models
 fs.readdirSync(models)
