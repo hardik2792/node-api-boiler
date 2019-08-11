@@ -1,5 +1,5 @@
-module.exports = (server) => {
-  const io = require('socket.io')(server);
+module.exports = (app) => {
+  const io = require('socket.io')(app);
   io.on('connection', function(client) {
       console.log("Connected",client.id);
       client.on('disconnect', function() {

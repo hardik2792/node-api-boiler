@@ -11,19 +11,16 @@ const path 		= require('path');
 const chalk 	= require('chalk'); //For Displaying Logs in different Colors
 const fs 		= require('fs');
 const ip        = require('ip');
-const server 	= require('./server/config/appConfig').server;
+const serverCfg	= require('./server/config/appConfig').server;
 const models    = path.join(__dirname, './server/models');         //Fetching All Models
 
 const app = express();
 
 // Setting Application PORT
-app.set('port', process.env.PORT || server.port);
+app.set('port', process.env.PORT || serverCfg.port);
 
 // Middlewares setup
 require('./server/connectors/middleware')(app);
-
-// Real-time Communication
-require('./support/socket/communicate')(app);
 
 //For Listing All the Models
 fs.readdirSync(models)
@@ -40,6 +37,13 @@ require('./server/routes/index.js')(app);
 global.appPort    = app.get('port');
 
 // Starting Server...
-http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
+// http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
+//     console.log(chalk.green.bold(server.name),chalk.blue('started @ IP'),chalk.green.bold('`http://'+ip.address()+':'+app.get('port')+'`'));
+// });
+
+const server = app.listen(appPort, () => {
     console.log(chalk.green.bold(server.name),chalk.blue('started @ IP'),chalk.green.bold('`http://'+ip.address()+':'+app.get('port')+'`'));
 });
+
+// Real-time Communication
+  require('./server/connectors/socket')(server);

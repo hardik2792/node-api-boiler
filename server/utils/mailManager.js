@@ -3,7 +3,7 @@
  **************************************/
 const nodemailer = require('nodemailer');
 const dateTimeUtils = require('./dateTime');
-const Config = require('../../config/config');
+const Config = require('../config/appConfig');
 
 // Email Configuration
 let smtpTransport = nodemailer.createTransport({

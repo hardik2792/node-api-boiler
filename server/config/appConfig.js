@@ -19,5 +19,10 @@ module.exports ={
           "name":"MEAN Boiler Demo",
           "port":4000,
           "considerPort":true
+        },
+  "email": {       //Server Configuration
+          "accountName":"MEAN Boiler Demo",
+          "port":4000,
+          "considerPort":true
         }
 }
