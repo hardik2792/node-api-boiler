@@ -14,7 +14,7 @@
     "html": "^1.0.0",
     "ip": "^1.1.5",
     "mongodb": "^2.2.30",
-    "mongoose": "^5.2.13",
+    "mongoose": "^5.7.5",
     "nodemailer": "^6.3.0",
     "socket.io": "^2.2.0"
   }
