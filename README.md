@@ -2,15 +2,13 @@
 
 ## Purpose:
 
-To provide platform for beginner to Develope APIs.
+To provide platform for beginner to understand working of APIs.
 
 Includes API Calling, Express as intermediator, Connecting MongoDB(NoSQL) with Node and Performing CRUD operations.
 
 Have adapted methodology to process algorithm using `Async/Await`.
 
 Basic Call to **Generate and download** *Spreadsheets* as well as *CSVs* using **[ExcelJS](https://www.npmjs.com/package/exceljs)**.
-
-Make a call to **Take MongoDb's Dump**
 
 
 ## Prerequisites on Machine:
