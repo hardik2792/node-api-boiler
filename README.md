@@ -44,8 +44,8 @@ $ npm start
 
 ### End Points registered
 
-| End points | Type | Description |
-| :------------ |:---------------:|
+| End points | Type | Description
+| :------------ |:---------------:|:---------------:|
 | 1. `/testConnection` | **GET** | To verify Server working |
 | 2. `/todo/create` | **POST** | To create todo task |
 | 3. `/todo/get` | **GET** | To get todo list |
