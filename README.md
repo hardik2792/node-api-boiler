@@ -42,6 +42,11 @@ $ npm start
 5. Open your browser and paste the below Link
 `localhost:4000/testConnection`
 
+5. Explore other endpoints using Postman collection
+```sh
+$ cd docs/node-api-boiler.postman_collection.json
+```
+
 ### End Points registered
 
 | End points | Type | Description
@@ -51,6 +56,6 @@ $ npm start
 | 3. `/todo/get` | **GET** | To get todo list |
 | 4. `/todo/update/:id` | **PUT** | To update todo  |
 | 5. `/todo/delete/:id` | **DELETE** | To add todo task |
-| 5. `/file/generate/:type` | **DELETE** | To generate XLSX/CSV file and Download |
-| 5. `/file/generate/` | **DELETE** | To add todo task |
+| 5. `/file/generate/:type` | **GET** | To generate XLSX/CSV file and Download |
+| 5. `/file/generate/` | **GET** | To add todo task |
 
