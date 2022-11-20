@@ -20,12 +20,15 @@ const errorLoggerUtils = require('../utils/errorLogger');
 //1. For Generating File
 async function generatingFile(req,res){
 	let fileData;
-	if(req.query.type == 'spreadSheet'){
+	if(req.params.type == 'xlsx'){
 		fileData = await generatingSpreadSheet('spreadSheet');
 	} else{
 		fileData = await generatingSpreadSheet('csv');
 	}
-	res.json({"success":true,"data":'http://'+appIP+':'+appPort+fileData.path});
+	res.json({"success":true,"data":{
+        instruction: "Copy Path and Paste in url bar in browser to view it",
+        path:'http://'+appIP+':'+appPort+fileData.path
+    }});
 }
 
 async function generatingSpreadSheet(type){
@@ -54,7 +57,7 @@ async function generatingSpreadSheet(type){
             };
         let footerFill = {
             type: 'pattern',
-            pattern:'darkVertical',
+            pattern:'dark',
             fgColor:{argb:'80FF0000'}
         };
         let headerAlign = { vertical: 'middle', horizontal: 'center' };
@@ -109,7 +112,7 @@ async function generatingSpreadSheet(type){
         let todoDetails = await Todo.find({});
         for (let iter = 0; iter < todoDetails.length; iter++) {
             sheet.getCell('A'+(tempIter+2)).value = (iter+1);
-            sheet.getCell('B'+(tempIter+2)).value = todoDetails[iter].details;
+            sheet.getCell('B'+(tempIter+2)).value = todoDetails[iter].title;
             sheet.getCell('C'+(tempIter+2)).value = todoDetails[iter].priority;
             sheet.getCell('D'+(tempIter+2)).value = todoDetails[iter].isCompleted ? 'Completed' : 'Incomplete';
             sheet.getCell('E'+(tempIter+2)).value = todoDetails[iter].createdDate;

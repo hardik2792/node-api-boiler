@@ -4,27 +4,17 @@ App Name: API Demo
 Purpose: Routing For API Call
 Created By: Hardik Thakor */
 
-const mongoose  = require('mongoose');
-const chalk 	= require('chalk');
-const dbControls= require('../config/appConfig').db;
+const chalk = require('chalk');
+const path = require('path');
+const glob = require('glob');
 
-const control 	= require('../controllers/controller');
-const foCtrls 	= require('../controllers/fileOperations');
-const cmdCtrls 	= require('../controllers/cmdController');
-
-module.exports=function(app) {
-	//Test API
-	app.get("/testConnection", function(req,res) {
-		res.send({'success':true,'message':'Successfully Connected!'})
+module.exports = function (app, express) {
+	const routePath = path.normalize(__dirname + '/**/*.route.js');
+	glob(routePath, {}, (err, files) => {
+		files.map((file) => {
+			require(file)(app, express);
+		})
 	});
 
-	app.post("/addtodo", control.addtodo);
-	app.get("/gettodo", control.gettodo);
-	app.put("/updatetodo", control.updatetodo);
-	app.delete("/deletetodo/:id", control.deletetodo);
-
-	app.get("/generatingFile", foCtrls.generatingFile);
-
-	app.get("/dbBackUp", cmdCtrls.dbBackUp);
-	app.get("/compressFolder", cmdCtrls.compressFolder);
-};
+	console.log(chalk.bold("\nRouter Loaded!\n"));
+}

@@ -1,0 +1,980 @@
+{
+	"info": {
+		"_postman_id": "3f4820d7-08f9-4495-b318-3ba6f5f59208",
+		"name": "node-api-boiler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1106245"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Add Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To do 1\",\n    \"priority\": \"high\",\n    \"description\":\"To complete with High Priority\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/todo/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"todo",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success - With Minimum Details",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"To do 1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/todo/create",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f6-V30pMpg0mlwQChs3iXccb8Qq0Og\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 08:30:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Added ToDo!\",\n    \"data\": {\n        \"priority\": \"normal\",\n        \"description\": null,\n        \"isCompleted\": false,\n        \"_id\": \"6379e5b61660ef43e2196451\",\n        \"title\": \"To do 1\",\n        \"createdDate\": \"2022-11-20T08:30:46.426Z\",\n        \"modifiedDate\": \"2022-11-20T08:30:46.426Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "Success - Add Todo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"To do 1\",\n    \"priority\": \"high\",\n    \"description\":\"To complete with High Priority\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/todo/create",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "272"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"110-3XM77+BaSFZDOTxTNmd4Ipdyymc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 08:32:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Added ToDo!\",\n    \"data\": {\n        \"priority\": \"high\",\n        \"description\": \"To complete with High Priority\",\n        \"isCompleted\": false,\n        \"_id\": \"6379e63971dbe044669cb369\",\n        \"title\": \"To do 1\",\n        \"createdDate\": \"2022-11-20T08:32:57.217Z\",\n        \"modifiedDate\": \"2022-11-20T08:32:57.217Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Todo List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/todo/get",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"todo",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success - Get Todo List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/todo/get",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "478"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1de-kp6efOS+90ZG8LVK9ps9aQa7nFc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 08:43:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Listed ToDo!\",\n    \"data\": [\n        {\n            \"priority\": \"normal\",\n            \"description\": null,\n            \"isCompleted\": false,\n            \"_id\": \"6379e5b61660ef43e2196451\",\n            \"title\": \"To do 1\",\n            \"createdDate\": \"2022-11-20T08:30:46.426Z\",\n            \"modifiedDate\": \"2022-11-20T08:30:46.426Z\",\n            \"__v\": 0\n        },\n        {\n            \"priority\": \"high\",\n            \"description\": \"To complete with High Priority\",\n            \"isCompleted\": false,\n            \"_id\": \"6379e63971dbe044669cb369\",\n            \"title\": \"To do 1\",\n            \"createdDate\": \"2022-11-20T08:32:57.217Z\",\n            \"modifiedDate\": \"2022-11-20T08:32:57.217Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Todo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/todo/update/6379e63971dbe044669cb369",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"todo",
+								"update",
+								"6379e63971dbe044669cb369"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success - Update Todo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"To do 1\",\n    \"priority\": \"high\",\n    \"description\":\"Update: To complete with High Priority\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/todo/update/6379e63971dbe044669cb369",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"update",
+										"6379e63971dbe044669cb369"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a-EF8Oz9HcFopzFKGV7WQh9mrBUL8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 08:59:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Updated ToDo!\",\n    \"data\": {\n        \"priority\": \"high\",\n        \"description\": \"Update: To complete with High Priority\",\n        \"isCompleted\": false,\n        \"_id\": \"6379e63971dbe044669cb369\",\n        \"title\": \"To do 1\",\n        \"createdDate\": \"2022-11-20T08:32:57.217Z\",\n        \"modifiedDate\": \"2022-11-20T08:32:57.217Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "Success - Update Todo Copy",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"To do 1\",\n    \"priority\": \"high\",\n    \"description\":\"Update: To complete with High Priority\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/todo/update/6379e63971dbe044669cb369",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"update",
+										"6379e63971dbe044669cb369"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a-EF8Oz9HcFopzFKGV7WQh9mrBUL8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 08:59:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Updated ToDo!\",\n    \"data\": {\n        \"priority\": \"high\",\n        \"description\": \"Update: To complete with High Priority\",\n        \"isCompleted\": false,\n        \"_id\": \"6379e63971dbe044669cb369\",\n        \"title\": \"To do 1\",\n        \"createdDate\": \"2022-11-20T08:32:57.217Z\",\n        \"modifiedDate\": \"2022-11-20T08:32:57.217Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/todo/delete/6379e63971dbe044669cb369",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"todo",
+								"delete",
+								"6379e63971dbe044669cb369"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success - Delete Todo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/todo/delete/6379e63971dbe044669cb369",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"delete",
+										"6379e63971dbe044669cb369"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-4mBHSOcaU/T0e3nWss/RHcWFz80\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 09:13:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Deleted ToDo!\",\n    \"data\": {\n        \"n\": 1,\n        \"ok\": 1,\n        \"deletedCount\": 1\n    }\n}"
+						},
+						{
+							"name": "Fail - Delete Todo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/todo/delete/6379e63971dbe044669cb369",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"todo",
+										"delete",
+										"6379e63971dbe044669cb369"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-gsxCsgKeyxUGlOBuJbUIKoEAQss\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 09:15:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Deleted ToDo!\",\n    \"data\": {\n        \"n\": 0,\n        \"ok\": 1,\n        \"deletedCount\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "File Operations",
+			"item": [
+				{
+					"name": "Generate Excel/CSV file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/file/generate/xlsx",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"file",
+								"generate",
+								"xlsx"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success - Generate Excel file",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/file/generate/xlsx",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"file",
+										"generate",
+										"xlsx"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "158"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9e-g/q1jnCw3kDu3eaeBicvdxYiivw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 09:25:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"instruction\": \"Copy Path and Paste in url bar in browser to view it\",\n        \"path\": \"http://192.168.1.5:4000/files/todo_20221120092503.xlsx\"\n    }\n}"
+						},
+						{
+							"name": "Success - Generate CSV file",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/file/generate/csv",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"file",
+										"generate",
+										"csv"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-zBQk0giZe+dw3jQX6uVVU6wBJiA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 09:24:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"instruction\": \"Copy Path and Paste in url bar in browser to view it\",\n        \"path\": \"http://192.168.1.5:4000/files/todo_20221120092403.csv\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Compres Folder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/file/compressFolder",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"file",
+								"compressFolder"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success - Compres Folder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/file/compressFolder",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"file",
+										"compressFolder"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-/8TGhZ3IaSR64lu3zA/kE2ktsl4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Nov 2022 10:12:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Folder Successfully Compressed!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Test Server Connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/testConnection",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"testConnection"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success-Server connectivity",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/testConnection",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"testConnection"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,HEAD,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-RMCZOOdxZLbnOtUwugdrbupGAks\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 20 Nov 2022 07:24:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Successfully Connected!\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:4000",
+			"type": "string"
+		}
+	]
+}

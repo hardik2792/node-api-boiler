@@ -1,13 +1,13 @@
 'use strict';
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const {Schema, model} = require('mongoose');
 
-const naviSchema = mongoose.Schema({
-    priority:{ type: String, default: 'normal' },
-    details:{ type: String, default: '-' },
-    isCompleted:{ type: Boolean, default: false },
-    createdDate:{ type: Date, default: Date.now },
-    modifiedDate:{ type: Date, default: Date.now }
+const naviSchema = Schema({
+    priority: { type: String, default: 'normal', enum: ["normal", "low", "high"] },
+    title: { type: String, required: true },
+    description: { type: String, default: null },
+    isCompleted: { type: Boolean, default: false },
+    createdDate: { type: Date, default: Date.now },
+    modifiedDate: { type: Date, default: Date.now }
 });
 
-mongoose.model('Todo', naviSchema);
+model('Todo', naviSchema);

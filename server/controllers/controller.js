@@ -43,8 +43,10 @@ async function addtodo(req,res){
 //4. Updating ToDo
 async function updatetodo(req,res){
   try{
-    let todo = req.body || req.params;
-    let updatedTodo = await Todo.findOneAndUpdate({_id:todo._id},{$set:todo},{new: true});
+    let todo = req.params;
+    let toupdate = req.body;
+    console.log(todo);
+    let updatedTodo = await Todo.findOneAndUpdate({_id:todo.id},{$set:toupdate},{new: true});
     res.send({'success':true,'msg':'Updated ToDo!','data':updatedTodo});
   } catch(error){
     res.status(500).send({'success':false, 'msg':'Error! Updating ToDo', 'error': error});

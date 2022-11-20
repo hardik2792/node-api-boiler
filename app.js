@@ -20,7 +20,7 @@ const app = express();
 app.set('port', process.env.PORT || serverCfg.port);
 
 // Middlewares setup
-require('./server/connectors/middleware')(app);
+require('./server/connectors/middleware')(app, express);
 
 //For Listing All the Models
 fs.readdirSync(models)
@@ -32,17 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/files", express.static(__dirname + '/server/generatedFiles'));
 
 // Application Routes
-require('./server/routes/index.js')(app);
+require('./server/routes/index.js')(app, express);
 
 global.appPort    = app.get('port');
 
-// Starting Server...
-// http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
-//     console.log(chalk.green.bold(server.name),chalk.blue('started @ IP'),chalk.green.bold('`http://'+ip.address()+':'+app.get('port')+'`'));
-// });
-
 const server = app.listen(appPort, () => {
-    console.log(chalk.green.bold(server.name),chalk.blue('started @ IP'),chalk.green.bold('`http://'+ip.address()+':'+app.get('port')+'`'));
+    console.log(chalk.green.bold(serverCfg.name),chalk.blue('started @ IP'),chalk.green.bold('`http://'+ip.address()+':'+app.get('port')+'`'));
 });
 
 // Real-time Communication

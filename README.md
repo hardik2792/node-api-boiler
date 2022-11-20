@@ -22,6 +22,7 @@ Make a call to **Take MongoDb's Dump**
 $ sudo apt-get install git
 ```
 4. [Mongodb](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04)
+5. [Postman](https://www.postman.com/downloads/) - Tool to test API
 
 ## Steps To Execute:
 
@@ -40,3 +41,16 @@ $ npm start
 ```
 5. Open your browser and paste the below Link
 `localhost:4000/testConnection`
+
+### End Points registered
+
+| End points | Type | Description |
+| :------------ |:---------------:|
+| 1. `/testConnection` | **GET** | To verify Server working |
+| 2. `/todo/create` | **POST** | To create todo task |
+| 3. `/todo/get` | **GET** | To get todo list |
+| 4. `/todo/update/:id` | **PUT** | To update todo  |
+| 5. `/todo/delete/:id` | **DELETE** | To add todo task |
+| 5. `/file/generate/:type` | **DELETE** | To generate XLSX/CSV file and Download |
+| 5. `/file/generate/` | **DELETE** | To add todo task |
+
